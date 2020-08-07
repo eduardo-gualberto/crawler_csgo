@@ -1,8 +1,6 @@
 import puppeteer from 'puppeteer';
 import mysql from 'mysql';
 
-let TOTAL_CASH = 5000;
-
 (async function () {
     const browser = await puppeteer.launch({
         defaultViewport: null
@@ -11,10 +9,10 @@ let TOTAL_CASH = 5000;
     await page.goto('https://csgoempire.com/');
 
     const db_config = {
-        host: 'localhost',
-        user: 'admin',
-        password: 'Vostro1510@',
-        database: 'csgoempire_data'
+        host: 'db_host',
+        user: 'db_user',
+        password: 'password',
+        database: 'database'
     };
 
     let connection = mysql.createConnection(db_config);
